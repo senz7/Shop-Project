@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DiamondLogo from "../logo/logo";
+import { useCart } from "../../context/CardContext";
 import "./header.css";
 
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const toggleMobile = () => setMobileOpen(!mobileOpen);
+  const [cartOpen, setCartOpen] = useState(false);
+  const { cartItems, removeFromCart } = useCart();
 
   return (
     <header className="header">
@@ -46,10 +47,41 @@ export const Header = () => {
 
         <button
           className={`mobile-toggle ${mobileOpen ? "open" : ""}`}
-          onClick={toggleMobile}
+          onClick={() => setMobileOpen(!mobileOpen)}
         >
           <span></span>
         </button>
+
+        <div className="cart-wrapper">
+          <button className="cart-btn" onClick={() => setCartOpen(!cartOpen)}>
+            🛒 {cartItems.length}
+          </button>
+
+          {cartOpen && (
+            <div className="cart-popup">
+              {cartItems.length === 0 && <p>Your cart is empty</p>}
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <span>
+                    {item.title} x {item.qty}
+                  </span>
+                  <button onClick={() => removeFromCart(item.id)}>
+                    Remove
+                  </button>
+                </div>
+              ))}
+              {cartItems.length > 0 && (
+                <NavLink
+                  to="/checkout"
+                  className="checkout-btn"
+                  onClick={() => setCartOpen(false)}
+                >
+                  Go to Checkout
+                </NavLink>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

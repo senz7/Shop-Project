@@ -1,0 +1,121 @@
+/* Контейнер страницы */
+.page {
+  padding-top: 100px; /* под хедер */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  color: #e8ecf2;
+}
+
+/* Страница товара */
+.product-page {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+/* Искусственное место под фото */
+.product-img {
+  width: 450px;
+  height: 600px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2c2f36 25%, #1b1f25 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa2ad;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Информация о товаре */
+.product-info {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+/* Название */
+.product-title {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+/* Цена */
+.product-price {
+  font-size: 26px;
+  font-weight: 600;
+  color: #9aa2ad;
+}
+
+/* Описание */
+.product-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d3d7df;
+}
+
+/* Кнопка покупки */
+.product-btn {
+  width: 220px;
+  padding: 12px 0;
+  border-radius: 10px;
+  border: none;
+  background: #5482ab; /* цвет под логотип */
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: background 0.25s ease;
+}
+
+.product-btn:hover {
+  background: #6a9aca; /* светлее при hover */
+}
+
+/* Ссылка "назад" */
+.back-btn {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #9aa2ad;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.back-btn:hover {
+  color: #e8ecf2;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+    font-size: 16px;
+  }
+
+  .product-info {
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .product-title {
+    font-size: 32px;
+  }
+
+  .product-price {
+    font-size: 22px;
+  }
+}

@@ -1,5 +1,56 @@
-.shipping {
-  margin-top: 200px;
+/* Universal page container */
+.page {
+  padding-top: 100px; /* matches header */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #e8ecf2;
   text-align: center;
-  color: #333;
+}
+
+/* Page title */
+.shipping-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* Content container */
+.shipping-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #9aa2ad;
+  text-align: left;
+}
+
+/* List of shipping brands */
+.shipping-brands {
+  list-style-type: disc;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.shipping-brands li {
+  margin-bottom: 12px;
+}
+
+/* Bold text inside content */
+.shipping-content strong {
+  color: #e8ecf2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shipping-title {
+    font-size: 42px;
+    margin-bottom: 28px;
+  }
+
+  .shipping-content {
+    font-size: 16px;
+    padding: 0 10px;
+  }
 }

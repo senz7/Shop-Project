@@ -5,4 +5,8 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0f1115;
+  height: 100%;
+  overflow-y: scroll; /* всегда зарезервировать место под скролл */
+  overflow-x: hidden;
 }
