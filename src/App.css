@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* вся высота экрана */
+}
+
+.App > .page-container {
+  flex: 1; /* занимает всё доступное пространство между header и footer */
+}
